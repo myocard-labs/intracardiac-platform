@@ -1,0 +1,31 @@
+intracardiac-platform
+Copyright (c) 2026 Daniel Klein and contributors
+
+Meta repo for the myocard-labs intracardiac EGM fibrosis detection project:
+  https://github.com/myocard-labs
+
+Licensed under the MIT License (see LICENSE).
+
+---------------------------------------------------------------------
+Third-party data referenced from this repo
+---------------------------------------------------------------------
+
+This repository references but does not redistribute the following datasets:
+
+  Intracardiac Atrial Fibrillation Database (IAFDB)
+  PhysioNet, doi:10.13026/C23S33
+  Distributed under the Open Data Commons Attribution License v1.0 (ODC-By v1.0)
+  https://physionet.org/content/iafdb/1.0.0/
+
+The IAFDB raw data must be downloaded directly from PhysioNet per its terms.
+The `iafdb-pipeline` component repo provides a thin downloader script.
+
+---------------------------------------------------------------------
+Third-party software referenced by example/integration scripts
+---------------------------------------------------------------------
+
+  Finitewave — BSD-3-Clause
+    https://github.com/TiNezlobinsky/Finitewave
+
+The Finitewave dependency is consumed via the `synthetic-egm-pipeline` component
+repo; this meta repo does not bundle or fork it.

@@ -1,0 +1,54 @@
+# --------------------------------------------------------------------
+# Editor + OS
+# --------------------------------------------------------------------
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# --------------------------------------------------------------------
+# LaTeX side products (in case anyone compiles a PDF from Documentation/)
+# --------------------------------------------------------------------
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# --------------------------------------------------------------------
+# Local-only design-doc build scripts may produce these
+# --------------------------------------------------------------------
+Documentation/*.tmp
+Documentation/__pycache__/
+
+# --------------------------------------------------------------------
+# Anything in references/ is reference literature staged outside this repo
+# at the workspace level — never inside intracardiac-platform/ to begin with.
+# This entry is a belt-and-suspenders guard against accidental drift.
+# --------------------------------------------------------------------
+references/
+Papers/
+
+# --------------------------------------------------------------------
+# Python (in case someone runs examples/ or integration/ scripts locally)
+# --------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# --------------------------------------------------------------------
+# Generated artifacts from examples/integration — never committed
+# --------------------------------------------------------------------
+examples/output/
+examples/banks/
+integration/output/
+*.h5
+*.pt
+*.onnx
