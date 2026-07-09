@@ -8,6 +8,12 @@
 .idea/
 
 # --------------------------------------------------------------------
+# Per-chat handoff prompts live at the workspace level (alongside the repos),
+# not in git. Guard against accidental re-creation inside the repo.
+# --------------------------------------------------------------------
+project/prompts/
+
+# --------------------------------------------------------------------
 # LaTeX side products (in case anyone compiles a PDF from Documentation/)
 # --------------------------------------------------------------------
 *.aux
@@ -27,11 +33,13 @@ Documentation/*.tmp
 Documentation/__pycache__/
 
 # --------------------------------------------------------------------
-# Anything in references/ is reference literature staged outside this repo
-# at the workspace level — never inside intracardiac-platform/ to begin with.
-# This entry is a belt-and-suspenders guard against accidental drift.
+# references/ holds third-party reference literature (PDFs) staged locally.
+# The PDFs are NOT committed (large + third-party). The one tracked file is
+# references/README.md — the paper index (title · why-it-applies · download
+# link) that keeps the reading list in git without the PDFs.
 # --------------------------------------------------------------------
-references/
+references/*
+!references/README.md
 Papers/
 
 # --------------------------------------------------------------------
@@ -40,14 +48,15 @@ Papers/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.venv/
+.venv*/
 venv/
 
 # --------------------------------------------------------------------
-# Generated artifacts from examples/integration — never committed
+# Generated artifacts + heavy binaries — never committed. Phase manifests
+# point at banks/models that live in producer output dirs / GitHub Releases,
+# so the heavy files stay out of git even when a phases/ manifest references
+# them.
 # --------------------------------------------------------------------
-examples/output/
-examples/banks/
 integration/output/
 *.h5
 *.pt

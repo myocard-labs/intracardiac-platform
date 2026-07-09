@@ -11,7 +11,7 @@ These tests intentionally live in the meta repo (not in any component repo) beca
 
 ## Planned tests
 
-- `smoke.sh` — installs the latest tag of every component, generates a 10-trace synthetic mini-bank, trains a 1-epoch tiny classifier, runs `egm-eval-sim2real` against a 1-patient IAFDB slice, renders one figure. Total runtime target: under 5 minutes on a laptop. If this passes, the dependency DAG is intact.
+- `smoke.sh` — installs the latest tag of every component, generates a 10-trace synthetic mini-bank, trains a 1-epoch tiny classifier, runs the `egm-class-eval` IAFDB diagnostic against a 1-patient IAFDB slice, renders one figure. Total runtime target: under 5 minutes on a laptop. If this passes, the dependency DAG is intact.
 - `contracts_round_trip.py` — write each `myocard-egm-contracts` schema to a tiny HDF5 / CSV / JSON file, read it back through `myocard-egm-data`, assert byte-equality of every field. Catches dtype / vlen-string regressions at the boundary.
 
 ## Not in scope here
