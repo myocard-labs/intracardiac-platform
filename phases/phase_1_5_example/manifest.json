@@ -1,0 +1,80 @@
+{
+  "schema_version": "1",
+  "phase": 1.5,
+  "status": "in_progress",
+  "egm_banks": [
+    {
+      "id": "tbank_synthetic_aliev_panfilov_noise_mixed_2026-07-01",
+      "path": "banks/tbank_synthetic_aliev_panfilov_noise_mixed_2026-07-01.classifier.h5",
+      "produced_by_package": "synthetic-egm-pipeline",
+      "produced_by_version": "v0.3.0",
+      "download_url": "https://github.com/myocard-labs/synthetic-egm-pipeline/releases/download/example/tbank.classifier.h5",
+      "usage_notes": "Noise-mixed synthetic training corpus for the Phase-1.5 realism study."
+    },
+    {
+      "id": "lpred_v1_5_synth_val_2026-07-02",
+      "path": "banks/lpred_v1_5_synth_val_2026-07-02.classifier.h5",
+      "produced_by_package": "egm-classifier",
+      "produced_by_version": "v0.4.0",
+      "model": "model_v1_5_2026-07-01",
+      "source_bank": "tbank_synthetic_aliev_panfilov_noise_mixed_2026-07-01",
+      "download_url": "https://github.com/myocard-labs/egm-classifier/releases/download/example/lpred.classifier.h5",
+      "usage_notes": "Labeled predictions on the synthetic validation split (a scored eval)."
+    }
+  ],
+  "noise_banks": [
+    {
+      "id": "nbank_iafdb_2026-06-28",
+      "path": "banks/nbank_iafdb_2026-06-28.h5",
+      "produced_by_package": "iafdb-pipeline",
+      "produced_by_version": "v0.4.0",
+      "download_url": "https://github.com/myocard-labs/iafdb-pipeline/releases/download/example/nbank.h5"
+    }
+  ],
+  "training_runs": [
+    {
+      "id": "run_v1_5_2026-07-01",
+      "path": "runs/run_v1_5_2026-07-01/run.json",
+      "produced_by_package": "egm-classifier",
+      "produced_by_version": "v0.4.0"
+    }
+  ],
+  "models": [
+    {
+      "id": "model_v1_5_2026-07-01",
+      "path": "models/model_v1_5_2026-07-01.onnx",
+      "produced_by_package": "egm-classifier",
+      "produced_by_version": "v0.4.0",
+      "download_url": "https://github.com/myocard-labs/egm-classifier/releases/download/example/model.onnx"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs_v1_5_iafdb_saturation_2026-07-03",
+      "path": "observations/obs_v1_5_iafdb_saturation_2026-07-03.json",
+      "produced_by_package": "egm-studio",
+      "produced_by_version": "v0.1.0",
+      "usage_tag": "informed_paper"
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig_prediction_histogram_v1_5",
+      "path": "figures/fig_prediction_histogram_v1_5.json",
+      "produced_by_package": "egm-studio",
+      "produced_by_version": "v0.1.0",
+      "consumes_banks": ["lpred_v1_5_synth_val_2026-07-02"],
+      "consumes_observations": ["obs_v1_5_iafdb_saturation_2026-07-03"],
+      "usage_tag": "in_paper_main"
+    }
+  ],
+  "papers": [
+    {
+      "id": "paper_phase_1_5",
+      "path": "../intracardiac-papers/papers/phase1-5",
+      "produced_by_package": "intracardiac-papers",
+      "produced_by_version": "latest",
+      "figures": ["fig_prediction_histogram_v1_5"]
+    }
+  ]
+}

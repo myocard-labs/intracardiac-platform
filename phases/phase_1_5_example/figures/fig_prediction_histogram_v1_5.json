@@ -1,0 +1,14 @@
+{
+  "schema_version": "1",
+  "id": "fig_prediction_histogram_v1_5",
+  "description": "Phase-1.5 realism check: the classifier's P(fibrotic) distribution on the labeled synthetic validation set (split by truth class). Rendered by the 'prediction-histogram' recipe via egm-studio-render.",
+  "recipe": "prediction-histogram",
+  "inputs": {
+    "groups": [
+      { "name": "Synthetic val", "bank_id": "lpred_v1_5_synth_val_2026-07-02" }
+    ]
+  },
+  "layout": { "mode": "panels" },
+  "styling": { "bins": 30, "density": false, "xlabel": "P(fibrotic)" },
+  "output": { "format": "pdf", "path": "out/fig_prediction_histogram_v1_5.pdf" }
+}

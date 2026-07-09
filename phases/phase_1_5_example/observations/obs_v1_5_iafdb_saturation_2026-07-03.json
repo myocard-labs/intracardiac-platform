@@ -1,0 +1,7 @@
+{
+  "schema_version": "1",
+  "id": "obs_v1_5_iafdb_saturation_2026-07-03",
+  "date": "2026-07-03",
+  "title": "v1 saturates on IAFDB — labels ~everything fibrotic",
+  "description": "Running the Phase-1 model on the unlabeled IAFDB bank as a label-free sanity check, P(fibrotic) sits at ~0.999 for essentially every segment regardless of segment — a saturated decision function with no usable operating threshold. This is the 'clearly wrong' directional baseline the Phase-1.5 synthetic-realism work aims to move away from; it is not a scored validation (IAFDB has no fibrosis ground truth)."
+}
